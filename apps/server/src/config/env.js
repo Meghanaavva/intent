@@ -7,7 +7,7 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 export const ENV = {
   PORT:            process.env.PORT || 8080,
   NODE_ENV:        process.env.NODE_ENV || 'development',
-  CLIENT_URL:      process.env.CLIENT_URL || 'https://intent-hfll.vercel.app/',
+  CLIENT_URL:      process.env.CLIENT_URL || 'https://intent-hfll.vercel.app',
   MONGODB_URI:     process.env.MONGODB_URI || 'mongodb://mavva_db_user:Meghana511@ac-edwob7x-shard-00-00.e2fg8iy.mongodb.net:27017,ac-edwob7x-shard-00-01.e2fg8iy.mongodb.net:27017,ac-edwob7x-shard-00-02.e2fg8iy.mongodb.net:27017/intent?ssl=true&replicaSet=atlas-6uez09-shard-0&authSource=admin&appName=Cluster0',
   REDIS_URL:       process.env.REDIS_URL || 'rediss://default:gQAAAAAAAcKLAAIgcDEzZjk3MzkzMzlkOGM0Y2I3ODkyYWEyYWRkMDJmNzJlNA@allowed-iguana-115339.upstash.io:6379',
   JWT_SECRET:      process.env.JWT_SECRET || '',
