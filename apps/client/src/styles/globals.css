@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --bg2: #f7f7f8;
+  --ink: #0a0a0f;
+  --ink2: #3a3a4a;
+  --ink3: #7a7a8a;
+  --ink4: #b0b0be;
+  --border: #e4e4ec;
+  --border2: #d0d0de;
+  --acc: #5b3df5;
+  --acc-l: #ede9ff;
+  --acc-d: #3d22d4;
+  --green: #00c566;
+  --red: #ff4444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: 'Inter', sans-serif; overflow-x: hidden; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(16px); } to { opacity:1; transform:translateY(0); } }
+@keyframes blink  { 0%,100% { opacity:1; } 50% { opacity:.25; } }
+@keyframes tick   { 0% { transform:translateX(0); } 100% { transform:translateX(-50%); } }
+@keyframes ring   { 0% { transform:scale(1); opacity:.8; } 100% { transform:scale(2.2); opacity:0; } }
+@keyframes msgIn  { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:translateY(0); } }
+@keyframes cardIn { from { opacity:0; transform:translateY(-5px); } to { opacity:1; transform:translateY(0); } }
+
+.animate-fadeUp  { animation: fadeUp .7s ease both; }
+.animate-blink   { animation: blink 1.8s infinite; }
+.animate-tick    { animation: tick 28s linear infinite; }
+.animate-ring    { animation: ring 1.3s ease-in-out infinite; }
+.animate-msgIn   { animation: msgIn .2s ease; }
+.animate-cardIn  { animation: cardIn .25s ease both; }

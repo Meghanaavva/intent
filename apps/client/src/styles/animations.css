@@ -1,0 +1,132 @@
+/**
+ * client/src/animations.css
+ * High-performance hardware-accelerated terminal animations.
+ * Optimizes graphics processing rendering using will-change layouts.
+ */
+
+/* --- 1. CORE KEYFRAME COEFFICIENTS --- */
+
+/* CRT Monitor Warmup / Shake Glitch */
+@keyframes matrix-glitch-flicker {
+  0% { opacity: 0.97; filter: hue-rotate(0deg) contrast(1); }
+  24% { opacity: 0.95; }
+  25% { opacity: 0.22; filter: hue-rotate(90deg) contrast(1.5); }
+  26% { opacity: 0.98; }
+  45% { opacity: 0.93; }
+  46% { opacity: 0.65; transform: skewX(4deg); }
+  47% { opacity: 0.99; transform: skewX(0deg); }
+  78% { opacity: 0.94; }
+  79% { opacity: 0.31; filter: drop-shadow(0 0 5px #ff007c); }
+  80% { opacity: 0.97; filter: none; }
+  100% { opacity: 0.99; filter: hue-rotate(360deg) contrast(1); }
+}
+
+/* Convergence Scanner Grid Array Sweep */
+@keyframes radar-matrix-sweep {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+/* Ephemeral Broadcast Node Terminal Feed Ingestion */
+@keyframes node-packet-arrive {
+  0% {
+    transform: translateY(15px);
+    opacity: 0;
+    border-color: var(--color-neon-cyan, #00ffcc);
+    background: rgba(0, 255, 204, 0.08);
+  }
+  50% {
+    border-color: var(--color-neon-cyan, #00ffcc);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    border-color: var(--border-matrix-dim, #262c36);
+    background: transparent;
+  }
+}
+
+/* Cryptographic Matrix Character String Stream Simulation */
+@keyframes text-matrix-hydration {
+  0% { text-shadow: 0 0 2px rgba(0, 255, 204, 0.2); color: #111317; }
+  50% { text-shadow: 0 0 8px rgba(0, 255, 204, 0.8); color: #ffffff; }
+  100% { text-shadow: 0 0 4px rgba(0, 255, 204, 0.4); color: var(--color-neon-cyan, #00ffcc); }
+}
+
+/* Transient Banner Toast Alert Entry Cascade */
+@keyframes toast-slide-in {
+  0% {
+    transform: translateY(100%) scale(0.95);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* --- 2. ENGINE ANIMATION UTILITY WRAPPERS --- */
+
+/* CRT System Console Ingestion Filter */
+.animate-matrix-crt {
+  will-change: opacity, transform, filter;
+  animation: matrix-glitch-flicker 8s linear infinite;
+}
+
+/* Matchmaking Radar Intercept Line Overlays */
+.animate-radar-sweep {
+  will-change: top, opacity;
+  animation: radar-matrix-sweep 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Real-time Dynamic Stream Feed Updates */
+.animate-node-arrival {
+  will-change: transform, opacity, border-color, background;
+  animation: node-packet-arrive 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Simulated Matrix Cypher Decoding Sequences */
+.animate-text-hydrate {
+  will-change: text-shadow, color;
+  animation: text-matrix-hydration 0.6s ease-out forwards;
+}
+
+/* Global Micro Toast System Cascade Alerts */
+.animate-toast-slide {
+  will-change: transform, opacity;
+  animation: toast-slide-in 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Static Interference Noise Pattern Shifter */
+@keyframes noise-grain-shift {
+  0% { transform: translate(0, 0) }
+  10% { transform: translate(-1%, -1%) }
+  20% { transform: translate(-2%, 1%) }
+  30% { transform: translate(1%, -2%) }
+  40% { transform: translate(-1%, 3%) }
+  50% { transform: translate(-3%, 1%) }
+  60% { transform: translate(2%, 1%) }
+  70% { transform: translate(-2%, 2%) }
+  80% { transform: translate(2%, 1%) }
+  90% { transform: translate(-1%, 3%) }
+  100% { transform: translate(0, 0) }
+}
+
+.matrix-noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  animation: noise-grain-shift 0.4s steps(4) infinite;
+}
