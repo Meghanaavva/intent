@@ -21,3 +21,31 @@ export async function getReactionsForIntent(intentId, ownerId) {
   const intent = await Intent.findById(intentId);
   // ...rest unchanged
 }
+
+export async function getNotifications(userId) {
+  assertValidId(userId, 'userId');
+
+  return await Notification.find({ user: userId })
+    .sort({ createdAt: -1 })
+    .lean();
+}
+
+export async function markNotificationsRead(userId) {
+  assertValidId(userId, 'userId');
+
+  await Notification.updateMany(
+    { user: userId, read: false },
+    { $set: { read: true } }
+  );
+
+  return true;
+}
+
+export async function getUnreadCount(userId) {
+  assertValidId(userId, 'userId');
+
+  return await Notification.countDocuments({
+    user: userId,
+    read: false,
+  });
+}
