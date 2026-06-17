@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = import.meta.env.VITE_SERVER_URL || 'http://localhost:8080';
+const BASE_URL = import.meta.env.VITE_SERVER_URL || 'https://intent-production-f30f.up.railway.app';
 
 export const api = axios.create({ baseURL: `${BASE_URL}/api` });
 
