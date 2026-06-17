@@ -1,5 +1,5 @@
 import { deactivateRoom, saveReport } from '../services/roomService.js';
-import { EVENTS } from '../../../packages/shared/constants.js';
+import { EVENTS } from '../../packages/shared/constants.js';
 import { logger } from '../utils/logger.js';
 
 export function registerRoomHandlers(io, socket) {

@@ -1,6 +1,6 @@
 import { createIntent, getActiveIntents } from '../services/feedService.js';
 import { checkContent } from '../services/moderationService.js';
-import { EVENTS } from '../../../packages/shared/constants.js';
+import { EVENTS } from '../../packages/shared/constants.js';
 import { logger } from '../utils/logger.js';
 
 export function registerFeedHandlers(io, socket) {

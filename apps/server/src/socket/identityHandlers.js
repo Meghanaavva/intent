@@ -1,6 +1,6 @@
 import { registerUserSocket, unregisterSocket } from '../utils/userSocketRegistry.js';
 import { getActiveIntents } from '../services/feedService.js';
-import { EVENTS } from '../../../packages/shared/constants.js';
+import { EVENTS } from '../../packages/shared/constants.js';
 
 export function registerIdentityHandlers(io, socket) {
   socket.on('identity:register', async ({ userId }) => {

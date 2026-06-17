@@ -1,5 +1,5 @@
 import { userJoined, userLeft, getOnlineCount } from '../services/presenceService.js';
-import { EVENTS } from '../../../packages/shared/constants.js';
+import { EVENTS } from '../../packages/shared/constants.js';
 
 export function registerPresenceHandlers(io, socket) {
   userJoined(socket.id);

@@ -1,5 +1,5 @@
 import { attemptMatch } from '../services/matchService.js';
-import { EVENTS } from '../../../packages/shared/constants.js';
+import { EVENTS } from '../../packages/shared/constants.js';
 import { logger } from '../utils/logger.js';
 
 // Map socketId -> { anonId, roomId }
